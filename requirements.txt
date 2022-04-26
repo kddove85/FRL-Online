@@ -1,0 +1,4 @@
+Django~=4.0.4
+pydub~=0.25.1
+python-vlc~=3.0.16120
+PyAudio~=0.2.11
