@@ -56,10 +56,12 @@ as weak as you would like if you are only going to use this locally.
    ```commandline
     $ python manage.py runserver
     ```
+   
    2. For safety purposes, run the db synch command
    ```commandline
    $ python manage.py migrate --run-syncdb
    ```
+   
    3. Navigate to localhost/admin/
    4. Insert the following radio stations:
    ```commandline
