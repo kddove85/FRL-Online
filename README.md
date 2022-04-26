@@ -54,11 +54,11 @@ as weak as you would like if you are only going to use this locally.
 3. Enter the radio stations:
    1. We are going to want to enter some data into the DB now. So run:
    ```commandline
-      $ python manage.py runserver
+    $ python manage.py runserver
     ```
    2. For safety purposes, run the db synch command
    ```commandline
-      $ python manage.py migrate --run-syncdb
+   $ python manage.py migrate --run-syncdb
    ```
    3. Navigate to localhost/admin/
    4. Insert the following radio stations:
