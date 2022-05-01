@@ -8,9 +8,17 @@
 </head>
 <body>
 
+{% if message %}
+  <div class="alert alert-success" role="alert">
+  You're Request Was Received!
+</div>
+{% endif %}
+
 <div class="p-5 mb-4 bg-light rounded-3">
   <div class="container py-5">
     <h1 class="display-5 fw-bold">FRL Online</h1>
+
+    <h3>Enter A Radio Program to be Recorded</h3>
 
     <form method="post">
       {% csrf_token %}
@@ -30,21 +38,21 @@
       </div>
 
       <div class="mb-3">
-        <label for="fileOutputName" class="form-label">File Output Name</label>
-        <input type="text" class="form-control" id="fileOutputName" name="fileOutputName" value="Bye World" aria-describedby="fileOutputNameHelp">
-        <div id="fileOutputNameHelp" class="form-text">Please Type the Output Name of Your Recording</div>
+        <label for="fileOutputName" class="form-label">Program Name</label>
+        <input type="text" class="form-control" id="fileOutputName" name="fileOutputName" aria-describedby="fileOutputNameHelp">
+        <div id="fileOutputNameHelp" class="form-text">Please Type the Name of Your Program (Radio Lab, This American Life, etc.)</div>
       </div>
 
       <div class="mb-3">
         <label for="startTime" class="form-label">Start Time</label>
         <input type="time" class="form-control" id="startTime" name="startTime" aria-describedby="startTimeHelp">
-        <div id="startTimeHelp" class="form-text">Please Select the Start Time of Your Recording</div>
+        <div id="startTimeHelp" class="form-text">Please Select the Start Time of Your Program</div>
       </div>
 
       <div class="mb-3">
         <label for="endTime" class="form-label">End Time</label>
         <input type="time" class="form-control" id="endTime" name="endTime" aria-describedby="endTimeHelp">
-        <div id="endTimeHelp" class="form-text">Please Select the End Time of Your Recording</div>
+        <div id="endTimeHelp" class="form-text">Please Select the End Time of Your Program</div>
       </div>
 
       <button class="btn btn-primary" type="submit">Submit</button>

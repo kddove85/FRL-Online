@@ -107,7 +107,7 @@ class RecordingLogic:
     def _convert_to_mp3(self, wave_file):
         print("MP3 Conversion - Initiated")
         sound = pydub.AudioSegment.from_wav(wave_file)
-        sound.export(f"{self.output_name}.mp3", format='mp3')
+        sound.export(f"{os.path.join('output', self.output_name)}.mp3", format='mp3')
         print('MP3 Conversion - Complete')
         print('Removing Wave File - Initiated')
         os.remove(wave_file)
