@@ -20,6 +20,8 @@
 
     <h3>Enter A Radio Program to be Recorded</h3>
 
+    <br/>
+
     <form method="post">
       {% csrf_token %}
       <div class="mb-3">
@@ -54,6 +56,20 @@
         <input type="time" class="form-control" id="endTime" name="endTime" aria-describedby="endTimeHelp">
         <div id="endTimeHelp" class="form-text">Please Select the End Time of Your Program</div>
       </div>
+
+      {% if days %}
+      <label class="form-label">Program Air Day(s)</label>
+      <br/>
+        {% for day in days %}
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id={{ day.day }} name={{ day.value }} value="true">
+            <label class="form-check-label" for={{ day.day }}>{{ day.day }}</label>
+          </div>
+        {% endfor %}
+      <div class="form-text">Please Check the Boxes for the Days you Would like your Program to be Recorded (NOTE: YOU MUST SELECT AT LEAST ONE)</div>
+      {% endif %}
+
+      <br/>
 
       <button class="btn btn-primary" type="submit">Submit</button>
     </form>
