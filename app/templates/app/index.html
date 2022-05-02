@@ -77,8 +77,30 @@
     <br>
 
     <div class="mb-3">
-      <label for="logs" class="form-label">Log</label>
-      <textarea class="form-control" id="logs" rows="7" disabled readonly></textarea>
+      {% if scheduled_items %}
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Program Name</th>
+            <th scope="col">Day of the Week</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for item in scheduled_items %}
+          <tr>
+            <th scope="row">{{ item.output_name }}</th>
+            <td>{{ item.day_of_the_week_to_string }}</td>
+            <td>{{ item.start_time }}</td>
+            <td>{{ item.end_time }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <h4>No Scheduled Items to Display</h4>
+      {% endif %}
     </div>
 
   </div>

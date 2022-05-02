@@ -32,3 +32,16 @@ class ScheduledItem(models.Model):
     end_time = models.CharField(max_length=8)
 
     objects = ScheduledItemManager()
+
+    def day_of_the_week_to_string(self):
+        switcher = {
+            0: "Sunday",
+            1: "Monday",
+            2: "Tuesday",
+            3: "Wednesday",
+            4: "Thursday",
+            5: "Friday",
+            6: "Saturday"
+        }
+        return switcher.get(self.day_of_the_week, "None Selected")
+

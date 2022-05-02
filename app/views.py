@@ -9,7 +9,8 @@ from .recording_logic import recording_logic
 def index(request):
     stations = Station.objects.order_by('call_sign')
     days = Weekday.objects.order_by('value')
-    context = {"stations": stations, "days": days}
+    scheduled_items = ScheduledItem.objects.order_by('day_of_the_week', 'start_time')
+    context = {"stations": stations, "days": days, "scheduled_items": scheduled_items}
 
     if request.method == 'POST':
         query_string = request.body.decode('utf8')
