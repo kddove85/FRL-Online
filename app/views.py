@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from urllib import parse
+import threading
 from .models import Station
 from .models import ScheduledItem
 from .models import Weekday
@@ -20,6 +21,13 @@ def index(request):
             item = ScheduledItem.objects.create_request(payload['radioStation'], payload['fileOutputName'], day,
                                                         payload['startTime'], payload['endTime'])
             item.save()
+
+            '''
+            get all items in table scheduled items
+            filter on Day of the week
+            if there are any to record today, spin new thread to begin recording logic
+            '''
+
         context["message"] = "Recording Request Submitted"
         return render(request, 'app/index.html', context)
 
