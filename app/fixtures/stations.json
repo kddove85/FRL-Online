@@ -1,0 +1,12 @@
+[
+  {"model": "app.station",
+    "pk": 1,
+    "fields":
+      {"call_sign": "WUOM",
+        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/WUOMFM.mp3"}},
+  {"model": "app.station",
+    "pk": 2,
+    "fields":
+      {"call_sign": "WJR",
+        "url": "http://playerservices.streamtheworld.com/api/livestream-redirect/WJRAMAAC.aac"}}
+]
