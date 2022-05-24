@@ -60,14 +60,10 @@ as weak as you would like if you are only going to use this locally.
    ```commandline
    $ python manage.py migrate --run-syncdb
    ```
-   3. Navigate to localhost/admin/
-   4. Insert the following radio stations:
+   3. Run the following commands:
    ```commandline
-   Call Sign: WUOM
-   URL: http://playerservices.streamtheworld.com/api/livestream-redirect/WUOMFM.mp3
-   
-   Call Sign: WJR
-   URL: http://playerservices.streamtheworld.com/api/livestream-redirect/WJRAMAAC.aac
+   $ python manage.py loaddata app/fixtures/stations.json
+   $ python manage.py loaddata app/fixtures/days.json
    ```
 4. Go back to the home page.
 5. Select a Radio Station from the list.

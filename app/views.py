@@ -4,6 +4,7 @@ from .models import Station
 from .models import ScheduledItem
 from .models import Weekday
 from .recording_logic import recording_logic
+from datetime import datetime
 
 
 def index(request):
@@ -52,3 +53,16 @@ def process_request(payload):
                                    payload['fileOutputName'],
                                    payload['startTime'],
                                    payload['endTime'])
+
+
+# Need to make this run periodically
+def get_next_scheduled_item():
+    now = datetime.now()
+    scheduled_items = ScheduledItem.objects.filter(day_of_the_week=now.weekday())
+    scheduled_items = scheduled_items.filter(start_time__gte=now.strftime('%H:%M'))
+    scheduled_items = scheduled_items.order_by('start_time')
+    scheduled_item = scheduled_items.first()
+    recording_logic.RecordingLogic(scheduled_item.url,
+                                   scheduled_item.output_name,
+                                   scheduled_item.start_time,
+                                   scheduled_item.end_time)
