@@ -40,17 +40,19 @@ Once all of this has been complete, you should be able to run the application.
 ## Running The Application
 
 1. Start by running migrations
-```commandline
-$ python manage.py migrate
-```
-This will create a db.sqlite3 file containing your database.
+   ```commandline
+   $ python manage.py migrate
+   ```
+   This will create a db.sqlite3 file containing your database.
+
 2. Create a superuser
-```commandline
-$ python manage.py createsuperuser
-```
-You will have to enter a username and password (and an email if you are so 
-inclined). Feel free to make the username/password combination as strong or
-as weak as you would like if you are only going to use this locally.
+   ```commandline
+   $ python manage.py createsuperuser
+   ```
+   You will have to enter a username and password (and an email if you are so 
+   inclined). Feel free to make the username/password combination as strong or
+   as weak as you would like if you are only going to use this locally.
+
 3. Enter the radio stations:
    1. We are going to want to enter some data into the DB now. So run:
    
