@@ -53,18 +53,23 @@ inclined). Feel free to make the username/password combination as strong or
 as weak as you would like if you are only going to use this locally.
 3. Enter the radio stations:
    1. We are going to want to enter some data into the DB now. So run:
+   
    ```commandline
     $ python manage.py runserver
-    ```
-   2. For safety purposes, run the db synch command
+   ```
+   
+   2. For safety purposes, run the db synch command:
+   
    ```commandline
    $ python manage.py migrate --run-syncdb
    ```
+
    3. Run the following commands:
    ```commandline
    $ python manage.py loaddata app/fixtures/stations.json
    $ python manage.py loaddata app/fixtures/days.json
    ```
+   
 4. Go back to the home page.
 5. Select a Radio Station from the list.
 6. Enter the name you want for your output file.
