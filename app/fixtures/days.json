@@ -1,0 +1,29 @@
+[
+  {"model": "app.weekday",
+    "pk": 1,
+    "fields":
+      {"day": "Sunday", "value": 0}},
+  {"model": "app.weekday",
+    "pk": 2,
+    "fields":
+      {"day": "Monday", "value": 1}},
+  {"model": "app.weekday",
+    "pk": 3,
+    "fields":
+      {"day": "Tuesday", "value": 2}},
+  {"model": "app.weekday",
+    "pk": 4,
+    "fields":
+      {"day": "Wednesday", "value": 3}},
+  {"model": "app.weekday",
+    "pk": 5,
+    "fields":
+      {"day": "Thursday", "value": 4}},
+  {"model": "app.weekday",
+    "pk": 6,
+    "fields":
+      {"day": "Friday", "value": 5}},
+  {"model": "app.weekday",
+    "pk": 7,
+    "fields": {"day": "Saturday", "value": 6}}
+]

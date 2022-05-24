@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from urllib import parse
-import threading
 from .models import Station
 from .models import ScheduledItem
 from .models import Weekday
